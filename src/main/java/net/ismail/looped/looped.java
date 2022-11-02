@@ -1,6 +1,7 @@
 package net.ismail.looped;
 
 import com.mojang.logging.LogUtils;
+import net.ismail.looped.item.Items;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -35,7 +36,7 @@ public class looped
     public looped()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
+        Items.register(modEventBus);
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
